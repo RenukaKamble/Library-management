@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read, Delete Data v9.x.x</title>
+    <link rel="stylesheet" href="./firedb.css">
+
+    <style>
+        body {
+            text-align: center;
+            height: 100%;
+            width: 100%;
+            background: #d1d1d1;
+        }
+        
+        button {
+            background-color: rgb(255, 40, 68);
+            border: none;
+            color: white;
+            padding: 10px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        
+        .heading {
+            font-size: 20px;
+            font-family: Time new Roman;
+        }
+        
+        label {
+            display: inline-block;
+            width: 100px;
+            font-family: calibri;
+        }
+        
+        input,
+        select {
+            width: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="border-box">
+
+        <div class="heading">
+            <br>
+            <br>
+            <h2>AWS</h2>
+            <h3>ISBN-10: ‎1694468127</h3>
+        </div> <br>
+
+        <label>Name</label><input placeholder="Firstname,Lastname" id="Namebox" type="text" required> <br><br>
+        <label>BookName</label><input placeholder="BookName" id="BookNamebox" type="text" required> <br><br>
+        <label>Bookid</label><input placeholder="Bookid" id="Idbox" type="text" required> <br><br>
+        <label>Email</label> <input placeholder="Email" id="Emailbox" type="text" required> <br><br>
+        <label>Gender</label><input placeholder="Male/Female" id="Genbox" type="text" required> <br><br>
+        <lable style='margin-right:35px'>PersonID</lable><input placeholder="00000" id="Mobilebox" type="text" required> <br><br>
+        <hr>
+        <br>
+        <button id="Delbtn" style='margin-right:18px'>BORROW</button>
+        <button id="Insbtn">RETURN</button>
+
+        <!------------------imports + configuration------------------>
+
+        <script type="module">
+            // Import the functions you need from the SDKs you need import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js"; // TODO: Add SDKs for Firebase products that you want to use // https://firebase.google.com/docs/web/setup#available-libraries
+            // Your web app's Firebase configuration const firebaseConfig = { apiKey: "AIzaSyBkN_zk4ARfGlVEINIreBaFqNnbVD_bt44", authDomain: "firedb-bad53.firebaseapp.com", projectId: "firedb-bad53", storageBucket: "firedb-bad53.appspot.com", messagingSenderId:
+            "131289665268", appId: "1:131289665268:web:7344a96a69fcc7ad9fd8a1" }; // Initialize Firebase const app = initializeApp(firebaseConfig); import{ getFirestore, doc, getDoc, setDoc, collection, addDoc, updateDoc, deleteDoc, deleteField } from
+            "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js"; const db = getFirestore(); //-------------refrence------------// let Namebox = document.getElementById("Namebox"); let BookNamebox = document.getElementById("BookNamebox");
+            let Idbox = document.getElementById("Idbox"); let Emailbox = document.getElementById("Emailbox"); let Genbox = document.getElementById("Genbox"); let Mobilebox = document.getElementById("Mobilebox"); let insbtn = document.getElementById("Insbtn");
+            let delbtn = document.getElementById("Delbtn"); //--------------adding document------------------// async function AddDocument_AutoID(){ var ref = collection (db,"Thebooklist"); const docRef = await addDoc( ref, { Nameofbook: Namebox.value,
+            BookNamebox : BookNamebox.value, Bookid: Idbox.value, Email: Emailbox.value, Gender : Genbox.value, PersonID : Mobilebox.value, } ) .then (()=>{ alert ("Book Return successfully..."); }) .catch((error)=>{ alert("unsuccessful operation , error
+            :"+ error); }); } async function AddDocument_CustomID(){ var ref = doc (db,"Thebooklist" , Mobilebox.value); await setDoc( ref, { Name : Namebox.value, BookName : BookNamebox.value, Bookid: Idbox.value, Email: Emailbox.value, Gender : Genbox.value
+            } ) .then (()=>{ alert ("Book Return successfully..."); }) .catch((error)=>{ alert("unsuccessful operation , error :"+ error); }); } //----------------deleting document-------------// async function DeleteDocument(){ var ref =doc (db,"Thebooklist"
+            , Mobilebox.value); const docSnap = await getDoc(ref); if(!docSnap.exists()){ alert("Docyment does not exist"); return; } await deleteDoc(ref) .then (()=>{ alert ("Book Borrowed successfully..."); }) .catch((error)=>{ alert("unsuccessful operation
+            , error :"+ error); }); } //--------------assign event to btns-----------// insbtn.addEventListener("click",AddDocument_CustomID); delbtn.addEventListener("click",DeleteDocument);
+
+        </script>
+</body>
+
+</html>

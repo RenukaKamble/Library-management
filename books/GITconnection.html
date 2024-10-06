@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read, Delete Data v9.x.x</title>
+    <link rel="stylesheet" href="./firedb.css">
+
+    <style>
+        body {
+            text-align: center;
+            height: 100%;
+            width: 100%;
+            background: #d1d1d1;
+        }
+        
+        button {
+            background-color: rgb(255, 40, 68);
+            border: none;
+            color: white;
+            padding: 10px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        
+        .heading {
+            font-size: 20px;
+            font-family: Time new Roman;
+        }
+        
+        label {
+            display: inline-block;
+            width: 100px;
+            font-family: calibri;
+        }
+        
+        input,
+        select {
+            width: 120px;
+        }
+        
+        .center form {
+            padding: 0 40px;
+            box-sizing: border-box;
+        }
+        
+        form .txt_field {
+            position: relative;
+            border-bottom: 2px solid #adadad;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post">
+        <div class="border-box">
+
+            <div class="heading">
+                <br>
+                <br>
+                <h2>Google IT</h2>
+            </div> <br>
+
+            <label>Name</label><input placeholder="Firstname,Lastname" id="Namebox" type="text" required> <br><br>
+            <label>BookName</label><input placeholder="BookName" id="BookNamebox" type="text" required> <br><br>
+            <label>Email</label> <input placeholder="Email" id="Emailbox" type="text" required> <br><br>
+            <label>Gender</label><input placeholder="Male/Female" id="Genbox" type="text" required> <br><br>
+            <hr>
+            <br>
+            <button id="Delbtn" style='margin-right:18px'>BORROW</button>
+            <button id="Insbtn">RETURN</button>
+    </form>
+    <!------------------imports + configuration------------------>
+
+
+</body>
+
+</html>
