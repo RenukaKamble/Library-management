@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login Form </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Alog.css">
+    
+  </head>
+  <body>
+    <div class="center"  id ="logform">
+      <h1>login </h1>
+      <form method="post" >
+        <div class="alert">Your message sent</div>
+        <div class="txt_field"    >
+          <input type="text"   id="Email"   placeholder="Email"  required>
+          <span></span>
+          <label>Email</label>
+        </div>
+        <div class="txt_field"   >
+          <input type="password" id="password"  placeholder="password" required >
+          <span></span>
+          <label>password</label>
+        </div>
+        <div ><center><a href ="#">Forgot Password?</center></a></div>
+        <div class="signup_link">
+        <input type="submit" value="Login">
+		 if Not an account? <a href="reg.html">Signup</a>
+        </div>
+      </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="./logform.js"></script>
+  </body>
+</html>

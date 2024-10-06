@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Contact Messages | Firebase</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="C.style.css">
+    <!-- Fontawesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+</head>
+
+<body>
+
+
+    <section class="contact-section">
+        <div class="contact-bg">
+            <h3>Get in Touch with Us</h3>
+            <h2>contact us</h2>
+            <div class="line">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+
+        <div class="contact-body">
+            <div class="contact-info">
+                <div>
+                    <span><i class = "fas fa-mobile-alt"></i></span>
+                    <span>Phone No.</span>
+                    <span class="text">1-2392-23928-2</span>
+                </div>
+                <div>
+                    <span><i class = "fas fa-envelope-open"></i></span>
+                    <span>E-mail</span>
+                    <span class="text">mail@website.com</span>
+                </div>
+                <div>
+                    <span><i class = "fas fa-map-marker-alt"></i></span>
+                    <span>Address</span>
+                    <span class="text">kherwadi road,Government Polytechnic Mumbai</span>
+                </div>
+                <div>
+                    <span><i class = "fas fa-clock"></i></span>
+                    <span>Opening Hours</span>
+                    <span class="text">Monday - sunday (9:00 AM to 9:00 PM)</span>
+                </div>
+            </div>
+
+            <div class="contact-form" id="contactus">
+                <div class="alert">Your message sent</div>
+
+                <form>
+                    <div>
+
+                        <input type="text" id="First Name" class="form-control" placeholder="First Name" required>
+                        <input type="text" id="Last Name" class="form-control" placeholder="Last Name" required>
+                    </div>
+                    <div>
+                        <input type="email" id="E-mail" class="form-control" placeholder="E-mail" required>
+                        <input type="text" id="Phone" class="form-control" placeholder="Phone" required>
+                    </div>
+                    <textarea rows="5" id="Message" placeholder="Message" class="form-control" required></textarea>
+                    <input type="submit" class="send-btn" value="send message">
+                    <input type="reset" class="reset-btn" value="Reset">
+                </form>
+
+
+            </div>
+        </div>
+
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2870.112258352692!2d72.82468247520842!3d19.197724682032014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7c24db49add%3A0x973ee0458244da44!2sAtharva%20College%20Of%20Engineering!5e1!3m2!1sen!2sin!4v1728209582650!5m2!1sen!2sin"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="contact-footer">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="./contactmail.js"></script>
+
+
+</body>
+
+</html>
